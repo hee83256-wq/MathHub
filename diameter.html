@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Hub - Diameter</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+
+<div class="header">
+    <div class="logo">
+        <div class="logo-icon">M</div>
+        <span>Math Hub</span>
+    </div>
+    <nav>
+        <a href="math hub.html">Home</a>
+        <a href="calculators.html">Calculator</a>
+        <a href="diameter.html" class="active">Diameter</a>
+        <a href="area.html">Area</a>
+        <a href="volume.html">Volume</a>
+        <a href="perimeter.html">Perimeter</a>
+        <a href="about.html">About</a>
+    </nav>
+</div>
+
+<div class="container">
+    <h2>Diameter & Circumference</h2>
+    <div class="grid">
+        <div class="card">
+            <div class="card-header">Diameter from Radius<br><small>d = 2r</small></div>
+            <div class="card-body">
+                <input type="number" id="r1" placeholder="Enter radius">
+                <button onclick="calcD1()">Solve</button>
+                <div class="result">Answer: <span id="d1">0.00</span></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">Radius from Diameter<br><small>r = d ÷ 2</small></div>
+            <div class="card-body">
+                <input type="number" id="d2" placeholder="Enter diameter">
+                <button onclick="calcD2()">Solve</button>
+                <div class="result">Answer: <span id="r2">0.00</span></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">Circumference (Radius)<br><small>C = 2πr</small></div>
+            <div class="card-body">
+                <input type="number" id="r3" placeholder="Enter radius">
+                <button onclick="calcD3()">Solve</button>
+                <div class="result">Answer: <span id="c3">0.00</span></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">Circumference (Diameter)<br><small>C = πd</small></div>
+            <div class="card-body">
+                <input type="number" id="d4" placeholder="Enter diameter">
+                <button onclick="calcD4()">Solve</button>
+                <div class="result">Answer: <span id="c4">0.00</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Math Hub | "We Learn • We Solve • We Win"</p>
+</footer>
+
+<script src="scripts.js"></script>
+</body>
+</html>

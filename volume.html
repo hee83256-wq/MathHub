@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Hub - Volume</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+
+<div class="header">
+    <div class="logo">
+        <div class="logo-icon">M</div>
+        <span>Math Hub</span>
+    </div>
+    <nav>
+        <a href="math hub.html">Home</a>
+        <a href="calculators.html">Calculator</a>
+        <a href="diameter.html">Diameter</a>
+        <a href="area.html">Area</a>
+        <a href="volume.html" class="active">Volume</a>
+        <a href="perimeter.html">Perimeter</a>
+        <a href="about.html">About</a>
+    </nav>
+</div>
+
+<div class="container">
+    <h2>Volume Formulas</h2>
+    <div class="grid">
+        <div class="card">
+            <div class="card-header">Cube<br><small>V = s³</small></div>
+            <div class="card-body">
+                <input type="number" id="vs" placeholder="Side length">
+                <button onclick="calcVolCube()">Solve</button>
+                <div class="result">Answer: <span id="cubeAns">0.00</span></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">Rectangular Prism<br><small>V = l × w × h</small></div>
+            <div class="card-body">
+                <input type="number" id="vpl" placeholder="Length">
+                <input type="number" id="vpw" placeholder="Width">
+                <input type="number" id="vph" placeholder="Height">
+                <button onclick="calcVolPrism()">Solve</button>
+                <div class="result">Answer: <span id="prismAns">0.00</span></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">Cylinder<br><small>V = πr²h</small></div>
+            <div class="card-body">
+                <input type="number" id="vr" placeholder="Radius">
+                <input type="number" id="vh" placeholder="Height">
+                <button onclick="calcVolCyl()">Solve</button>
+                <div class="result">Answer: <span id="cylAns">0.00</span></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">Cone<br><small>V = ⅓πr²h</small></div>
+            <div class="card-body">
+                <input type="number" id="vcr" placeholder="Radius">
+                <input type="number" id="vch" placeholder="Height">
+                <button onclick="calcVolCone()">Solve</button>
+                <div class="result">Answer: <span id="coneAns">0.00</span></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">Sphere<br><small>V = (4/3)πr³</small></div>
+            <div class="card-body">
+                <input type="number" id="vsp" placeholder="Radius">
+                <button onclick="calcVolSphere()">Solve</button>
+                <div class="result">Answer: <span id="sphereAns">0.00</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Math Hub | "We Learn • We Solve • We Win"</p>
+</footer>
+
+<script src="scripts.js"></script>
+</body>
+</html>

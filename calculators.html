@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Hub - Scientific Calculator</title>
+    <style>
+        :root {
+            --dark-purple: #7A6FD9;
+            --medium-purple: #9890E8;
+            --light-purple: #C5C1F5;
+            --pale-purple: #E9E7FC;
+            --red-clear: #E86A6A;
+            --gray-del: #B0A8E0;
+            --text: #2A2440;
+            --white: #ffffff;
+            --border: #B4A7F5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #F8F7FF;
+        }
+
+        /* Navigation Bar */
+        .header {
+            background-color: var(--white);
+            padding: 1rem 2rem;
+            border-bottom: 2px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: var(--dark-purple);
+        }
+
+        .logo-icon {
+            background-color: var(--medium-purple);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            margin: 0 0.5rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            transition: 0.2s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--light-purple);
+            color: var(--dark-purple);
+        }
+
+        /* Main Layout */
+        .container {
+            padding: 2.5rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 {
+            color: var(--dark-purple);
+            margin-bottom: 2rem;
+            font-size: 1.7rem;
+            max-width: 500px;
+            width: 100%;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--pale-purple);
+        }
+
+        .calculator {
+            background-color: var(--pale-purple);
+            padding: 2rem;
+            border-radius: 12px;
+            width: 480px;
+            box-shadow: 0 2px 8px rgba(122, 111, 217, 0.15);
+        }
+
+        #display {
+            width: 100%;
+            height: 80px;
+            font-size: 1.8rem;
+            text-align: right;
+            padding: 0 1rem;
+            margin-bottom: 1.2rem;
+            border: 2px solid var(--medium-purple);
+            border-radius: 8px;
+            background-color: var(--white);
+            color: var(--text);
+        }
+
+        /* Button Grid with small gap */
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 6px;
+        }
+
+        button {
+            padding: 1.2rem 0.5rem;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.15s;
+        }
+
+        button:hover {
+            filter: brightness(1.08);
+        }
+
+        .func { background-color: var(--light-purple); color: var(--text); }
+        .op { background-color: var(--medium-purple); color: var(--white); }
+        .clear { background-color: var(--red-clear); color: var(--white); }
+        .del { background-color: var(--gray-del); color: var(--white); }
+        .num { background-color: var(--light-purple); color: var(--text); }
+        .equal { background-color: var(--dark-purple); color: var(--white); }
+
+        .span-2 { grid-column: span 2; }
+        .span-3 { grid-column: span 3; }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<div class="header">
+    <div class="logo">
+        <img src="images/logonew.png" alt="Math Hub Logo" class="logo-img">
+        <span>Math Hub</span>
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="calculators.html" class="active">Calculator</a>
+        <a href="diameter.html">Diameter</a>
+        <a href="area.html">Area</a>
+        <a href="volume.html">Volume</a>
+        <a href="perimeter.html">Perimeter</a>
+        <a href="about.html">About</a>
+    </nav>
+</div>
+
+<div class="container">
+    <h2>Scientific Calculator</h2>
+
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <div class="buttons">
+            <!-- Row 1 -->
+            <button class="func" onclick="append('sin(')">sin</button>
+            <button class="func" onclick="append('cos(')">cos</button>
+            <button class="func" onclick="append('tan(')">tan</button>
+            <button class="func" onclick="append('sqrt(')">√</button>
+            <button class="func" onclick="append('Math.PI')">π</button>
+
+            <!-- Row 2 -->
+            <button class="func" onclick="append('log10(')">log</button>
+            <button class="func" onclick="append('pow(')">xʸ</button>
+            <button class="func" onclick="append('(')">(</button>
+            <button class="func" onclick="append(')')">)</button>
+            <button class="func" onclick="append('/100')">%</button>
+
+            <!-- Row 3 -->
+            <button class="clear" onclick="clearAll()">C</button>
+            <button class="del" onclick="deleteLast()">DEL</button> <!-- ✅ DELETE BUTTON -->
+            <button class="op" onclick="append('/')">÷</button>
+            <button class="op" onclick="append('*')">×</button>
+            <button class="op" onclick="append('-')">−</button>
+
+            <!-- Row 4 -->
+            <button class="op" onclick="append('+')">+</button>
+            <button class="num" onclick="append('7')">7</button>
+            <button class="num" onclick="append('8')">8</button>
+            <button class="num" onclick="append('9')">9</button>
+            <button class="num" onclick="append('4')">4</button>
+
+            <!-- Row 5 -->
+            <button class="num" onclick="append('5')">5</button>
+            <button class="num" onclick="append('6')">6</button>
+            <button class="num" onclick="append('1')">1</button>
+            <button class="num" onclick="append('2')">2</button>
+            <button class="num" onclick="append('3')">3</button>
+
+            <!-- Row 6 -->
+            <button class="num" onclick="append('.')">.</button>
+            <button class="num span-2" onclick="append('0')">0</button>
+            <button class="equal span-2" onclick="calculate()">=</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const display = document.getElementById('display');
+
+    function append(value) {
+        // Prevent multiple decimal points in one number
+        if (value === '.' && display.value.includes('.')) {
+            const lastNumber = display.value.split(/[+\-*/()%√πlogpow]/).pop();
+            if (lastNumber.includes('.')) return;
+        }
+        display.value += value;
+    }
+
+    function clearAll() {
+        display.value = '';
+    }
+
+    // ✅ Delete last character function
+    function deleteLast() {
+        display.value = display.value.slice(0, -1);
+    }
+
+    function calculate() {
+        try {
+            let expr = display.value
+                // Replace symbols with valid JS syntax
+                .replace(/×/g, '*')
+                .replace(/−/g, '-')
+                .replace(/√/g, 'Math.sqrt')
+                .replace(/π/g, 'Math.PI')
+                .replace(/log10/g, 'Math.log10')
+                .replace(/pow/g, 'Math.pow')
+                // Allow negative numbers at start or after operator
+                .replace(/([+\-*/(])-/g, '$1negative_')
+                .replace(/^-/g, 'negative_');
+
+            expr = expr.replace(/negative_(\d*\.?\d+)/g, '-$1');
+
+            // Convert trig functions from degrees to radians
+            expr = expr.replace(
+                /(Math\.sin|Math\.cos|Math\.tan)\((.*?)\)/g,
+                (_, func, val) => {
+                    let num = val.trim();
+                    if (num.startsWith('-')) {
+                        num = ({num});
+                    }
+                    return {func}({num} * Math.PI / 180);
+                }
+            );
+
+            const result = eval(expr);
+            // Show up to 6 decimals, remove trailing zeros
+            display.value = Number.isFinite(result)
+                ? parseFloat(result.toFixed(6)).toString()
+                : 'Error';
+        } catch {
+            display.value = 'Error';
+            setTimeout(clearAll, 1500);
+        }
+    }
+</script>
+
+</body>
+</html>

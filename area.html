@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Hub - Area</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+
+<div class="header">
+    <div class="logo">
+        <div class="logo-icon">M</div>
+        <span>Math Hub</span>
+    </div>
+    <nav>
+        <a href="math hub.html">Home</a>
+        <a href="calculators.html">Calculator</a>
+        <a href="diameter.html">Diameter</a>
+        <a href="area.html" class="active">Area</a>
+        <a href="volume.html">Volume</a>
+        <a href="perimeter.html">Perimeter</a>
+        <a href="about.html">About</a>
+    </nav>
+</div>
+
+<div class="container">
+    <h2>Area Formulas</h2>
+    <div class="grid">
+        <div class="card">
+            <div class="card-header">Rectangle<br><small>A = l × w</small></div>
+            <div class="card-body">
+                <input type="number" id="rl" placeholder="Length">
+                <input type="number" id="rw" placeholder="Width">
+                <button onclick="calcAreaRect()">Solve</button>
+                <div class="result">Answer: <span id="rectAns">0.00</span></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">Square<br><small>A = s²</small></div>
+            <div class="card-body">
+                <input type="number" id="ss" placeholder="Side length">
+                <button onclick="calcAreaSquare()">Solve</button>
+                <div class="result">Answer: <span id="squareAns">0.00</span></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">Triangle<br><small>A = ½ × b × h</small></div>
+            <div class="card-body">
+                <input type="number" id="tb" placeholder="Base">
+                <input type="number" id="th" placeholder="Height">
+                <button onclick="calcAreaTri()">Solve</button>
+                <div class="result">Answer: <span id="triAns">0.00</span></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">Circle<br><small>A = πr²</small></div>
+            <div class="card-body">
+                <input type="number" id="cr" placeholder="Radius">
+                <button onclick="calcAreaCircle()">Solve</button>
+                <div class="result">Answer: <span id="circleAns">0.00</span></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">Parallelogram<br><small>A = b × h</small></div>
+            <div class="card-body">
+                <input type="number" id="pb" placeholder="Base">
+                <input type="number" id="ph" placeholder="Height">
+                <button onclick="calcAreaPara()">Solve</button>
+                <div class="result">Answer: <span id="paraAns">0.00</span></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">Trapezoid<br><small>A = ½ × (a + b) × h</small></div>
+            <div class="card-body">
+                <input type="number" id="ta" placeholder="Base 1">
+                <input type="number" id="tb2" placeholder="Base 2">
+                <input type="number" id="th2" placeholder="Height">
+                <button onclick="calcAreaTrap()">Solve</button>
+                <div class="result">Answer: <span id="trapAns">0.00</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Math Hub | "We Learn • We Solve • We Win"</p>
+</footer>
+
+<script src="scripts.js"></script>
+</body>
+</html>
